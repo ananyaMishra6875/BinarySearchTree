@@ -2,6 +2,11 @@
   font-family: system-ui, sans-serif;
   color: #1a1a1a;
   background: #fafafa;
+
+  /* Greens from the original Java GUI (TreePanel.java / BSTGui.java). */
+  --node-fill: #aaca9a;
+  --panel-background: #e3eae0;
+  --edge-colour: #4a5a44;
 }
 
 body {
@@ -9,4 +14,36 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
+}
+
+.tree-container {
+  background: var(--panel-background);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Shrink the tree to fit narrow screens instead of overflowing. */
+.tree {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.tree .edge {
+  stroke: var(--edge-colour);
+  stroke-width: 2;
+}
+
+.tree .node circle {
+  fill: var(--node-fill);
+  stroke: var(--edge-colour);
+  stroke-width: 2;
+}
+
+.tree .node text {
+  font-size: 14px;
+  font-weight: 600;
+  /* Centre the label on the circle's centre point. */
+  text-anchor: middle;
+  dominant-baseline: central;
 }
