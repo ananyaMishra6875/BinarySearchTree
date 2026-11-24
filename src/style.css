@@ -16,10 +16,74 @@ body {
   min-height: 100vh;
 }
 
+#app {
+  width: min(720px, 100% - 32px);
+  padding: 24px 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* ---------- Controls ---------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls input {
+  flex: 1 1 180px;
+  padding: 8px 10px;
+  font: inherit;
+  border: 2px solid var(--edge-colour);
+  border-radius: 8px;
+}
+
+.controls button {
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 600;
+  background: var(--node-fill);
+  border: 2px solid var(--edge-colour);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #9ec18c;
+}
+
+/* ---------- Messages ---------- */
+
+.messages {
+  min-height: 1.5em;
+  margin: 12px 0;
+}
+
+.messages p {
+  margin: 4px 0;
+}
+
+.messages .error {
+  color: #a3261b;
+}
+
+/* ---------- Tree ---------- */
+
 .tree-container {
+  display: flex;
+  justify-content: center;
   background: var(--panel-background);
   border-radius: 12px;
   padding: 16px;
+}
+
+.empty {
+  color: #555;
+  margin: 24px 0;
 }
 
 /* Shrink the tree to fit narrow screens instead of overflowing. */
